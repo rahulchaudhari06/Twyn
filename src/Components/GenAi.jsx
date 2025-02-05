@@ -6,18 +6,19 @@ import { Button } from "@/components/ui/button"
 import { ShineBorder } from "./ui/shine-border";
 import { FaArrowTurnUp } from "react-icons/fa6";
 import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuLabel,
-  DropdownMenuRadioGroup,
-  DropdownMenuRadioItem,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectLabel,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select"
+
 
 
 export default function GenAi(){
-    const [position, setPosition] = React.useState("bottom")
+
     const [tweet, setTweet] = useState("")
     const [data, setData] = useState("")
     const genAI = new GoogleGenerativeAI(import.meta.env.VITE_API_KEY);
@@ -91,20 +92,21 @@ export default function GenAi(){
               onChange={(e) => setTweet(e.target.value)} 
               placeholder="Type your Tweet" 
             />
-            <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-                <Button variant="outline">Refine</Button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent className="w-56">
-                <DropdownMenuLabel>Panel Position</DropdownMenuLabel>
-                <DropdownMenuSeparator />
-                <DropdownMenuRadioGroup value={position} onValueChange={setPosition}>
-                <DropdownMenuRadioItem value="top">Top</DropdownMenuRadioItem>
-                <DropdownMenuRadioItem value="bottom">Bottom</DropdownMenuRadioItem>
-                <DropdownMenuRadioItem value="right">Right</DropdownMenuRadioItem>
-                </DropdownMenuRadioGroup>
-            </DropdownMenuContent>
-            </DropdownMenu>
+            <Select>
+          <SelectTrigger className="w-[180px]">
+            <SelectValue placeholder="Select a fruit" />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectGroup>
+              <SelectLabel>Fruits</SelectLabel>
+              <SelectItem value="apple">Apple</SelectItem>
+              <SelectItem value="banana">Banana</SelectItem>
+              <SelectItem value="blueberry">Blueberry</SelectItem>
+              <SelectItem value="grapes">Grapes</SelectItem>
+              <SelectItem value="pineapple">Pineapple</SelectItem>
+            </SelectGroup>
+          </SelectContent>
+    </Select>
             <div ref={buttonRef} onClick={handleGenerate} className="absolute bottom-4 right-4">
               <Button variant="outline" size="icon" className="bg-inherit text-white "><FaArrowTurnUp/></Button>
             </div>
