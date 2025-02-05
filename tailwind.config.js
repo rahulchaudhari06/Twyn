@@ -12,7 +12,8 @@ export default withMT({
 
         fontFamily: {
             "poi-one": ['Poiret One', 'monospace'],
-            "p-sans": ["Public Sans", "sans serif"]
+            "p-sans": ["Public Sans", "sans serif"],
+			"sixtyfour": ["SixtyFour", "helvetica"]
         },
   		colors: {
   			primary: {

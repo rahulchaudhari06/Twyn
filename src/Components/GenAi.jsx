@@ -91,19 +91,19 @@ export default function GenAi() {
   return (
     <>
       <Toaster />
-      <div className="flex flex-col items-center justify-center gap-4 mt-20">
+      <div className="flex flex-col items-center justify-center gap-4 mt-10 sm:mt-20 px-4 sm:px-6">
         <div className="relative w-full max-w-[800px]">
           <Textarea
-            className="resize-none text-white rounded-3xl tracking-widest p-4 pl-8 border border-slate-500 min-h-[150px] w-full pr-32"
+            className="resize-none text-white rounded-3xl tracking-widest p-4 pl-4 sm:pl-8 border border-slate-500 min-h-[120px] sm:min-h-[150px] w-full pr-16 sm:pr-32"
             type="text"
             id="userInput"
             value={tweet}
             onChange={(e) => setTweet(e.target.value)}
             placeholder="Type your Tweet"
           />
-          <div className="absolute bottom-4 left-5 flex gap-4">
+          <div className="absolute bottom-4 left-4 sm:left-5 flex flex-col sm:flex-row gap-2 sm:gap-4">
             <Select onValueChange={(value) => setTone(value)} defaultValue="Casual">
-              <SelectTrigger className="w-[130px] bg-inherit text-white border-slate-500 tracking-widest">
+              <SelectTrigger className="w-[110px] sm:w-[130px] bg-inherit text-white border-slate-500 tracking-widest text-sm sm:text-base">
                 <SelectValue />
               </SelectTrigger>
               <SelectContent className="bg-[#1F1F1F] text-white border-slate-500">
@@ -119,7 +119,7 @@ export default function GenAi() {
               </SelectContent>
             </Select>
             <Select onValueChange={(value) => setMode(value)} defaultValue="Formatting">
-              <SelectTrigger className="w-[130px] bg-inherit text-white border-slate-500 tracking-widest">
+              <SelectTrigger className="w-[110px] sm:w-[130px] bg-inherit text-white border-slate-500 tracking-widest text-sm sm:text-base">
                 <SelectValue />
               </SelectTrigger>
               <SelectContent className="bg-[#1F1F1F] text-white border-slate-500">
@@ -140,9 +140,9 @@ export default function GenAi() {
         </div>
 
         {data && (
-          <div className="w-full max-w-[800px] mt-10 relative">
+          <div className="w-full max-w-[800px] mt-6 sm:mt-10 relative px-2 sm:px-0">
             <ShineBorder
-              className="bg-inherit min-h-10 text-white w-full"
+              className="bg-inherit min-h-10 text-white w-full text-sm sm:text-base p-4"
               color={["#1F1F1F", "#FFFFFF", "#66B2B2", "#EAB308"]}
             >
               {data}
