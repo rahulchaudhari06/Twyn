@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import Footer from './Components/Footer'
 import HomePage from './Components/HomePage'
 import { NavbarSimple } from './Components/Navbar'
 import BackgroundImage from './Components/BackgroundImage'
@@ -15,6 +16,8 @@ function App() {
           <HomePage />
         </div>
       </BackgroundImage>
+      <Footer></Footer>
+
     </div>
   )
 }

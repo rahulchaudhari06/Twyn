@@ -119,7 +119,7 @@ export default function GenAi() {
               </SelectContent>
             </Select>
             <Select onValueChange={(value) => setMode(value)} defaultValue="Formatting">
-              <SelectTrigger className="w-[110px] sm:w-[130px] bg-inherit text-white border-slate-500 tracking-widest text-sm sm:text-base">
+              <SelectTrigger className="w-[120px] sm:w-[140px] bg-inherit text-white border-slate-500 tracking-widest text-sm sm:text-base">
                 <SelectValue />
               </SelectTrigger>
               <SelectContent className="bg-[#1F1F1F] text-white border-slate-500">
